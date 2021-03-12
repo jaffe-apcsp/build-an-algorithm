@@ -1,0 +1,21 @@
+{
+  "title": "Procedures 2",
+  "start":    {"row": 1, "col": 1},
+  "direction": "east",
+  "blocksAvailable": ["forward","right","left","blue","yellow","p1"],
+  "board": [
+    ["","","","","","","",""],
+    ["","b","p","y","p","p","b",""],
+    ["","p","","","","","p",""],
+    ["","p","","","","","y",""],
+    ["","y","","","","","p",""],
+    ["","p","","","","","p",""],
+    ["","b","p","p","y","p","b",""],
+    ["","","","","","","",""]
+  ],
+  "main": {
+    "blocks": [],
+    "max": 4
+  },
+  "help": ["Put blocks that have to be repeated in Procedure 1, then call P1 from the Main procedure"]
+}

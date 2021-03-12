@@ -1,0 +1,12 @@
+.selected {border: 5px solid blue;}
+.not-selected {border: 5px solid white;}
+
+.editor {margin: 0 auto 20px;}
+.editor thead tr th {padding: 15px 0;}
+.editor-header-title {text-align: left;}
+.editor-header-select {text-align: right;}
+
+.center-code {}
+.instruction {width: 67px; height: 67px; padding: 5px; border: 1px solid #444; padding: 3px;}
+.code-image {height: 60px; width: 60px;}
+

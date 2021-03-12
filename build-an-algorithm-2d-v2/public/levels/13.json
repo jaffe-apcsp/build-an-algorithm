@@ -1,0 +1,29 @@
+{
+  "title": "Procedures 5",
+  "start":    {"row": 0, "col": 0},
+  "direction": "east",
+  "blocksAvailable": ["forward","right","left","blue","yellow","p1","p2"],
+  "board": [
+    ["b","p","p","p","p","p","p","y"],
+    ["y","p","p","p","p","p","p","b"],
+    ["b","p","p","p","p","p","p","y"],
+    ["y","p","p","p","p","p","p","b"],
+    ["b","p","p","p","p","p","p","y"],
+    ["","","","","","","","b"],
+    ["","","","","","","",""],
+    ["","","","","","","",""]
+  ],
+  "main": {
+    "blocks": [],
+    "max": 14
+  },
+  "p1": {
+    "blocks": [],
+    "max": 12
+  },
+  "p2": {
+    "blocks": [],
+    "max": 12
+  },
+  "help": []
+}

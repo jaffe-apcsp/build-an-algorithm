@@ -1,0 +1,23 @@
+{
+  "cells": [
+    [0,9,0,0,0,0,0,0],
+    [0,1,0,0,0,0,0,0],
+    [0,1,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0]
+  ],
+  "code": [
+    ["forward","forward","light"]
+  ],
+  "instructions": ["forward","light"],
+  "level": 0,
+  "startRow": 2,
+  "startCol": 1,
+  "startDirection": "north",
+  "startHeight": 1,
+  "helpText": "The code blocks are already\nset up for this level.\nMr. Robot must move forward twice,\n then light up the block.\n\nClick Play to test your code",
+  "levelText": "Basics-1"
+}

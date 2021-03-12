@@ -1,0 +1,10 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "$hash": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}

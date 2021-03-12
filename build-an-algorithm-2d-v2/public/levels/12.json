@@ -1,0 +1,25 @@
+{
+  "title": "Procedures 4",
+  "start":    {"row": 0, "col": 0},
+  "direction": "east",
+  "blocksAvailable": ["forward","right","left","blue","yellow","p1"],
+  "board": [
+    ["b","p","p","p","p","p","p","b"],
+    ["p","p","p","p","p","p","p","p"],
+    ["p","p","p","p","p","p","p","p"],
+    ["p","p","p","p","p","p","p","p"],
+    ["p","p","p","p","p","p","p","p"],
+    ["p","p","p","p","p","p","p","p"],
+    ["p","p","p","p","p","p","p","p"],
+    ["b","p","p","p","p","p","p","b"]
+  ],
+  "main": {
+    "blocks": [],
+    "max": 12
+  },
+  "p1": {
+    "blocks": [],
+    "max": 7
+  },
+  "help": []
+}

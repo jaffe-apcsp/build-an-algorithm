@@ -1,0 +1,23 @@
+{
+  "cells": [
+    [0,1,0,9,0,0,0,0],
+    [0,1,0,1,0,0,0,0],
+    [0,1,1,1,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0]
+  ],
+  "level": 1,
+  "startRow": 0,
+  "startCol": 1,
+  "startDirection": "south",
+  "startHeight": 1,
+  "instructions": ["forward","left","right","light","jump"],
+  "helpText": "Click the code blocks to move them\n into the Main procedure window.\nClick the blocks in the main procedure\nwindow to remove them",
+  "code": [
+    []
+  ],
+  "levelText": "Basics-2"
+}

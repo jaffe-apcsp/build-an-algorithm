@@ -1,0 +1,23 @@
+{
+  "cells": [
+    [0,1,2,1,0,0,0,0],
+    [0,1,10,1,0,0,0,0],
+    [0,1,10,1,0,0,0,0],
+    [0,1,10,1,0,0,0,0],
+    [0,1,10,1,0,0,0,0],
+    [0,1,10,1,0,0,0,0],
+    [0,1,10,1,0,0,0,0],
+    [0,0,0,0,0,0,0,0]
+  ],
+  "code": [
+    [],[]
+  ],
+  "instructions": ["forward","right","left","jump","light","p1"],
+  "level": 14,
+  "startRow": 0,
+  "startCol": 2,
+  "startDirection": "south",
+  "startHeight": 2,
+  "helpText": null,
+  "levelText": "Loops-1"
+}

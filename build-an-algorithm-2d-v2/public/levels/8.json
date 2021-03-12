@@ -1,0 +1,24 @@
+{
+  "title": "Basic 8",
+  "start":    {"row": 0, "col": 4},
+  "direction": "west",
+  "blocksAvailable": ["forward","right","left","blue","yellow"],
+  "board": [
+    ["","","b","p","y","","",""],
+    ["","","p","","","","",""],
+    ["","","y","p","b","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""]
+  ],
+  "main": {
+    "blocks": [],
+    "max": 12
+  },
+  "help": [
+    "Are you beginning to see some limitations with having only 12 blocks?",
+    "Think about what we could add to help streamline the repetitive code blocks."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Advanced 2",
+  "start":    {"row": 6, "col": 7},
+  "direction": "west",
+  "blocksAvailable": ["forward","right","left","blue","yellow","p1","p2","l1","l2"],
+  "board": [
+    ["","","","","","","","b"],
+    ["p","y","b","y","b","y","b","p"],
+    ["p","b","y","b","y","b","y","p"],
+    ["p","y","b","y","b","y","b","p"],
+    ["p","b","y","b","y","b","y","p"],
+    ["p","y","b","y","b","y","b","p"],
+    ["p","b","y","b","y","b","y","p"],
+    ["","","","","","","",""]
+  ],
+  "main": {
+    "blocks": [],
+    "max": 12
+  },
+  "help": []
+}

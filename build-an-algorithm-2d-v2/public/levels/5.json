@@ -1,0 +1,17 @@
+{
+  "title": "Basic 5",
+  "start":    {"row": 0, "col": 2},
+  "direction": "east",
+  "blocksAvailable": ["forward","right","left","blue","yellow"],
+  "board": [
+    ["","","p","b","p","","",""],
+    ["","","p","p","p","","",""],
+    ["","","p","p","y","","",""],
+    ["","","p","p","b","","",""],
+    ["","","p","p","y","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""]
+  ],
+  "help": ["For this level there is a limit of 12 code blocks in the 'main' program so be as efficient as possible"]
+}

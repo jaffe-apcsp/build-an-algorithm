@@ -1,0 +1,22 @@
+{
+  "cells": [
+    [0,3,3,11,0,0,0,0],
+    [0,2,2,2,0,0,0,0],
+    [0,1,1,1,0,0,0,0],
+    [0,2,2,2,0,0,0,0],
+    [0,1,1,1,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0]
+  ],
+  "code": [
+    []
+  ],
+  "instructions": ["forward","right","left","jump","light"],
+  "level": 3,
+  "startRow": 4,
+  "startCol": 1,
+  "startDirection": "east",
+  "startHeight": 1,
+  "levelText": "Basics-4"
+}

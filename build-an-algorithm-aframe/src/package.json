@@ -1,0 +1,14 @@
+{
+  "name": "build-an-algorithm-aframe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "hrs -p 8080 ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,23 @@
+{
+  "cells": [
+    [1,1,1,9,0,0,0,0],
+    [0,0,0,1,0,0,0,0],
+    [0,0,0,1,0,0,0,0],
+    [9,1,1,9,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0]
+  ],
+  "code": [
+    [],[]
+  ],
+  "instructions": ["forward","right","left","jump","light","p1"],
+  "level": 8,
+  "startRow": 0,
+  "startCol": 0,
+  "startDirection": "east",
+  "startHeight": 1,
+  "helpText": "You won't have enough blocks to\nbe get to the end with only the\nMain procedure.\n\nClick Procedure 1 and put the repeated\noperations in Procedure 1 and execute\nit with the P1 block",
+  "levelText": "Procedures-1"
+}

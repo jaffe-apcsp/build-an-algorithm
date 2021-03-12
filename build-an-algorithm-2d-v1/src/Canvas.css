@@ -1,0 +1,38 @@
+.canvas {}
+
+.room {border-collapse: collapse; font-size: 0.90em;}
+
+.room-row {}
+
+.room-cell {
+  border: 3px solid #000;
+  padding: 5px;
+  width: 76px;
+  height: 67px;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.inactive {background-color: black; color: white;}
+.active {background-color: white; color: blue;}
+.visited {background-color: #bbb;}
+.should-light {background-color: cyan; color: black;}
+/*.should-light:before {content: 'Light me up';}*/
+.lit {background-color: yellow; color: black;}
+/*.lit:before {content: "I'm lit up";}*/
+.finish {background-color: rgb(42,252,46);}
+/*.finish:before {content: "Finish"; font-weight: bold;}*/
+/*.start:before {content: 'Start'; color: red; font-weight: bold;}*/
+
+.sprite {width: 95%; height: 95%;}
+
+.occupied {background-image: url("images/arrow-up.png"); background-size: contain; background-repeat: round;}
+.occupied-north {background-image: url("images/arrow-up.png"); }
+.occupied-east {background-image: url("images/arrow-right.png"); }
+.occupied-south {background-image: url("images/arrow-down.png"); }
+.occupied-west {background-image: url("images/arrow-left.png"); }
+
+.no-top-wall {border-top: none;}
+.no-right-wall {border-right: none;}
+.no-left-wall {border-left: none;}
+.no-bottom-wall {border-bottom: none;}

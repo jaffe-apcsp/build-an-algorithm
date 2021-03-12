@@ -1,0 +1,27 @@
+{
+  "title": "Procedures 1",
+  "start":    {"row": 0, "col": 4},
+  "direction": "west",
+  "blocksAvailable": ["forward","right","left","blue","yellow","p1"],
+  "board": [
+    ["","","b","p","y","","",""],
+    ["","","p","","","","",""],
+    ["","","y","p","b","","",""],
+    ["","","","","p","","",""],
+    ["","","b","p","y","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""]
+  ],
+  "main": {
+    "blocks": ["p1"],
+    "max": 12
+  },
+  "p1": {
+    "blocks": ["yellow","forward","forward","blue"],
+    "max": 12
+  },
+  "help": [
+    "This is the same pattern, but longer. Put blocks in 'Procedure 1' to help with the repeated code and 'call' Procedure 1 with the P1 block."
+  ]
+}

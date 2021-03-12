@@ -1,0 +1,23 @@
+{
+  "cells": [
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0]
+  ],
+  "code": [
+    [],[],[]
+  ],
+  "instructions": ["forward","right","left","jump","light"],
+  "level": xxx,
+  "startRow": xxx,
+  "startCol": xxx,
+  "startDirection": "xxx",
+  "startHeight": 1,
+  "helpText": null,
+  "levelText": ""
+}

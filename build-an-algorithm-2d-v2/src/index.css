@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body {background-image: url("images/star-field1.jpg") }
+/*div {border: 1px solid blue;}*/
+.app {}
+.header p {font-size: 3rem; text-align: center; color: white; background-color: transparent; padding: 10px; border-radius: 10px; margin: 15px 5%;}
+.game-complete p {font-size: 3rem; font-style: italic; text-align:center; color: springgreen; background-color: transparent; padding: 10px; border-radius: 10px; margin: 15px 5%;}
+.canvas {display: flex; color: white;}
+.centered {text-align: center; margin: 10px 0;}
+.centered button {padding: 5px 15px; background-color: rgb(201,218,246); font-size: 1.2rem; border-radius: 10px; border: none; font-style: italic; font-weight:bold;}
+
+.left-side {width: 535px;}
+.right-side {width: 65%;}
+
+.palette {width: 70%; display: inline-flex;}
+.control-table {width: 100%;}
+.control-table-button {width: 30%;}
+.control-table-button button {text-align: center; font-size: 2rem; width: 100%; margin-left: 10px; margin-bottom: 10px;}
+.control-table-palette {width: 70%;}
+.standby {background-color: green; color: white}
+.running {background-color: red; color: white;}
+.complete {background-color: green; color: black;}
+.reset {background-color: green; color: white;}
+.error {background-color: red; color: white;}
+.run-button {border: 4px solid #aaa; border-radius: 10px;}
+
+.code-window {text-align: center; margin-bottom: 10px; padding: 10px; border: 3px solid black;}
+.code-window-selected {border: 3px solid dodgerblue; border-radius: 10px;}
+.code-window-title {text-align: left; cursor: pointer; text-decoration: underline; border-radius: 5px; padding: 3px 15px;}
+.code-window-title:hover {background-color: dodgerblue; color: white;}
+.code-window table {display: inline-table;}
+.code-window thead tr td {border: none;}
+.code-window .iterations-container {text-align: right;}
+.code-window .iterations span {margin-right: 10px;}
+.code-window .iterations-left {text-align: center;}
+.code-window td {border: 1px solid white; background-color: transparent;}
+.code-window .code-block-hide-cell {border: none;}
+.code-window-text-left {text-align: left; margin-left: 10px;}
+
+.code-block {width: 50px; height: 50px; border-radius: 10px; border: 3px solid black; background-size:contain; background-repeat:no-repeat; background-position: center center; cursor: pointer;}
+.code-block-empty {width: 50px; height: 50px; border: none;}
+.code-block-active {border: 3px solid red;}
+.code-block-right-border {border-right: 3px solid cyan;}
+.code-block-left-border {border-left: 3px solid cyan;}
+.code-block-inactive {border: 1px solid black !important;}
+
+.cell-on-path {background-image: url(images/cell-on-path.png);}
+.forward {background-image: url(images/forward.png);}
+.blank {background-image: url(images/blank.png);}
+.right {background-image: url(images/right.png);}
+.left {background-image: url(images/left.png);}
+.p1 {background-image: url(images/p1.png);}
+.p2 {background-image: url(images/p2.png);}
+.l1 {background-image: url(images/l1.png);}
+.l2 {background-image: url(images/l2.png);}
+.start {background-image: url(images/cell-on-path.png);}
+.finish {background-color: green; background-image: url(images/star.png);}
+
+.blue-off {background-color: rgb(201,218,246); border: 3px solid rgb(25,89,201);}
+.blue-on {background-color: rgb(25,89,201);}
+.yellow-off {background-color: rgb(244,204,205); border: 3px solid rgb(252,15,37);}
+/*.yellow-off {background-color: rgb(255,241,206); border: 3px solid rgb(255,253,55);}*/
+.yellow-on {background-color: rgb(252,15,37);}
+/*.yellow-on {background-color: rgb(255,253,55);}*/
+.cell-on-path {background-color: white;}
+/*.cell-text {transform: rotate(45deg); text-align: center; font-size: 0.8rem; padding-top: 5px; color: black;}*/
+.bug {background-image: url(images/bug-y.png); background-size:contain; background-repeat:no-repeat; background-position: center center}
+
+.inactive {opacity:0.70;}
+.active {border-color: red; opacity: 1.0;}
+
+.north {}
+.east {transform: rotate(90deg);}
+.south {transform: rotate(180deg);}
+.west {transform: rotate(-90deg);}
+
+.help {padding: 0 15%; color: white; text-align: center; color: black;}
+.help-container {background-color: rgb(201,218,246); padding: 5px 15px; border-radius: 15px;}
+.help .help-container h2 {margin: 10px;}

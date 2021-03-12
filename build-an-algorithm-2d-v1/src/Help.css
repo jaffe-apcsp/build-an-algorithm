@@ -1,0 +1,8 @@
+.help-window {
+  border: solid 1px #ccc;
+  margin: 25px 25px !important;
+  border-radius: 10px;
+  background-color: lightblue;
+}
+.help-window h5 {margin: 20px 0;}
+.button-like {background-color: rgb(48,166,74); color: white; padding: 5px 10px; border-radius: 5px;}

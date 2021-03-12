@@ -1,0 +1,19 @@
+{
+  "title": "Basic 2",
+  "start":    {"row": 0, "col": 4},
+  "direction": "south",
+  "blocksAvailable": ["forward","right","left","blue","yellow"],
+  "board": [
+    ["","","y","","b","","",""],
+    ["","","p","","p","","",""],
+    ["","","p","p","p","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""],
+    ["","","","","","","",""]
+  ],
+  "help": [
+    "Now it's your turn to place the blocks.  Click a block in the palette to place it in the Main procedure. You can drag and drop blocks too"
+  ]
+}

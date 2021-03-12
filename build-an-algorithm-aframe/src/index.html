@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Build an Algorithm</title>
+  <meta name="description" content="Build an Algorithm">
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="https://github.com/ngokevin/aframe-physics-components/blob/master/dist/aframe-physics-components.min.js"></script>
+  <script src="https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-arrow-component/"></script>
+
+<!--  <script src="lib/aframe.min.js"></script>-->
+<!--  <script src="lib/aframe-environment-component.min.js"></script>-->
+<!--  <script src="lib/aframe-physics-system.min.js"></script>-->
+<!--  <script src="lib/aframe-physics-components.min.js"></script>-->
+<!--  <script src="lib/aframe-mouse-cursor-component.min.js"></script>-->
+<!--  <script src="lib/aframe-arrow-component.js"></script>-->
+<!--  <script src="lib/aframe-curve-component.min.js"></script>-->
+  <script src="lib/aframe-alongpath-component.js"></script>
+  <script src="lib/aframe-rounded-button-component.js"></script>
+  <script src="lib/ramda.min.js"></script>
+  <script src="constants.js"></script>
+  <script src="Stack.js"></script>
+  <script src="state.js"></script>
+
+  <script src="utilsGeneral.js"></script>
+  <script src="bezier.js"></script>
+
+  <script src="controller.js"></script>
+
+  <script src="box/boxBuild.js"></script>
+  <script src="box/boxDrop.js"></script>
+  <script src="box/boxDropAll.js"></script>
+  <script src="box/boxUpdate.js"></script>
+  <script src="removeAfterFall.js"></script>
+
+  <script src="robot/robotPlace.js"></script>
+  <script src="robot/robotForward.js"></script>
+  <script src="robot/robotDrop.js"></script>
+  <script src="robot/robotTurn.js"></script>
+  <script src="robot/robotTwirl.js"></script>
+
+  <script src="hover.js"></script>
+  <script src="instruction/instructionUpdate.js"></script>
+  <script src="procedures/procedureUpdate.js"></script>
+  <script src="procedures/proceduresSelect.js"></script>
+  <script src="procedures/procedureColor.js"></script>
+  <script src="procedures/proceduresVisible.js"></script>
+
+  <script src="button/buttonPlayStop.js"></script>
+  <script src="button/buttonState.js"></script>
+  <script src="button/startOver.js"></script>
+
+  <script src="helpUpdate.js"></script>
+  <script src="titleUpdate.js"></script>
+</head>
+
+<body id="body">
+  <a-scene id="scene" controller cursor="rayOrigin: mouse">
+    <a-assets>
+      <img id="atmosphere" src="assets/atmosphere.jpg" />
+
+      <!-- Box mixin -->
+      <a-mixin id="box-mixin"
+               geometry="primitive:box;"
+               material="src: assets/concrete.jpg"
+               box-drop
+               remove-after-fall
+               static-body>
+      </a-mixin>
+
+      <a-asset-item id="makey-obj" src="assets/MakeyTheRobot.obj" />
+      <a-mixin id="robot-mixin"
+               obj-model="obj: #makey-obj;"
+               material="color: #ff6600"
+               position="0 0 0"
+               scale="0.04 0.04 0.04">
+      </a-mixin>
+      <a-mixin id="arrow-stem-mixin"
+               position="0 0 0"
+               rotation="-90 0 0"
+               geometry="primitive: plane; height: 0.5; width: 0.25"
+               material="color: #000000">
+      </a-mixin>
+      <a-mixin id="arrow-point-mixin"
+               position="0 0 -0.71"
+               rotation="-90 0 0"
+               geometry="primitive: triangle; vertexA: 0 0.5 0; vertexB: -0.5 -0.5 0; vertexC: 0.5 -0.5 0"
+               material="color: #000000"
+      >
+      </a-mixin>
+    </a-assets>
+
+    <!-- Environment and light -->
+    <a-sky src="#atmosphere" rotation="0 0 0"></a-sky>
+    <a-light type="ambient" color="#666" position="0 0 0" rotation="0 0 0" scale="1 1 1" visible="true" light="type:ambient;color:#666"></a-light>
+    <a-light type="point" intensity="" position="2.5 7.5 10" rotation="0 0 0" scale="1 1 1" visible="true" light="type:point;intensity:1"></a-light>
+
+<!--    &lt;!&ndash; Robot animation curve; positions are set at each state change &ndash;&gt;-->
+<!--    <a-curve id="jump" type="QuadraticBezier" robot-set-jump>-->
+<!--      <a-curve-point id="bezier-0" position="0 0 0"></a-curve-point>-->
+<!--      <a-curve-point id="bezier-1" position="0 0 0"></a-curve-point>-->
+<!--      <a-curve-point id="bezier-2" position="0 0 0"></a-curve-point>-->
+<!--    </a-curve>-->
+
+    <!-- Game board -->
+    <a-entity id="game-board"
+              position="-5 -1 1"/>
+
+      <!-- Boxes -->
+      <a-entity id="boxes"
+                box-build
+                box-drop-all
+                position="0 0 0"></a-entity>
+
+      <!-- Robot -->
+      <a-entity id="robot"
+                robot-place
+                robot-drop
+                robot-forward
+                robot-turn
+                robot-twirl
+                dynamic-body
+                visible="false">
+        <a-entity mixin="robot-mixin"
+                  id="robot-obj"
+                  name="robot-obj"
+                  position="0 0 -.1">
+        </a-entity>
+        <a-entity rotation="0 180 0"
+                  position="0 0.741 0"
+                  scale="0.25 0.25 0.25">
+          <a-entity mixin="arrow-stem-mixin"></a-entity>
+          <a-entity mixin="arrow-point-mixin"></a-entity>
+        </a-entity>
+      </a-entity>
+
+    </a-entity>
+
+    <!-- Camera -->
+    <a-entity id="rig" position="0 6 7" rotation="-50 0 0">
+      <a-entity camera look-controls wasd-controls>
+
+        <a-entity id="title"
+                  title-update
+                  geometry="primitive: plane; height: 1.5; width: 15"
+                  material="color: #4D88E5"
+                  text="value: Build an Algorithm; align: center; width: 15; color: black"
+                  position="0 7 -10"></a-entity>
+
+        <!-- Play / Stop button -->
+        <a-entity id="play-button"
+                  geometry="primitive: plane; height: 1.5; width: 8.5"
+                  material="color: #50A132"
+                  text="value: Play; align: center; width:12; color:black"
+                  button-play-stop
+                  button-state
+                  position="-7 5.3 -10"></a-entity>
+
+        <!-- Available instruction set -->
+        <a-entity id="instruction-set"
+                  position="-1 5 -10">
+        </a-entity>
+
+        <!-- Procedures -->
+        <a-entity id="procedures"
+                  position="5 5 -10">
+        </a-entity>
+
+        <a-entity id="help"
+                  help-update
+                  geometry="primitive: plane; height: 4; width: 10"
+                  text="value: Test help; align: center; width: 12; color: black"
+                  material="color: #4D88E5"
+                  position="7 -4 -10"></a-entity>
+
+        <a-entity id="start-over"
+                  geometry="primitive: plane; height: 1; width: 4"
+                  material="color: #50A132"
+                  start-over
+                  text="value: Back to Level 1; align: center; width:10; color:black"
+                  position="8 -7 -10"></a-entity>
+
+      </a-entity>
+    </a-entity>
+
+  </a-scene>
+</body>
+</html>
+
+

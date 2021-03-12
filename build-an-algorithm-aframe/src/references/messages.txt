@@ -1,0 +1,46 @@
+Messages sent from one element to another
+
+STATE CHANGE ACTIONS
+'ADD_INSTRUCTION': {instruction: 'forward'}
+instructionSet to controller | Add an instruction block to the currently selected procedure
+
+'REMOVE_INSTRUCTION': {procIdx, index}
+procedureSet to controller | Remove the clicked instruction from the procedure
+
+'SELECT_PROCEDURE': {procIdx}
+procedureSet to controller | Select current procedure
+
+Component action messages
+Initializations
+'init-instruction-set'
+Sent to instructionSet | Create the set of instructions
+
+'init-robot-place'
+Sent to placeRobot | Put the robot in the starting place
+
+'init-procedures-set'
+Sent to proceduresSet | Initialize the procedure boxes
+
+Boxes
+'box-build'
+Sent to boxBuild | Build the puzzle boxes
+
+'box-drop'
+Sent to boxDrop | Drop the boxes
+
+Procedures
+'update-procedures-set'
+Sent to proceduresSet | Update the instructions in the procedure boxes
+
+'update-select-procedure'
+Sent to proceduresSet | Updates the selected procedure
+
+Robot
+'robot-drop'
+Sent to robotDrop | Drop the robot
+
+'robot-set-jump'
+Sent to robotSetJump | Set the robot jump path based on the current position and direction
+
+'robot-do-jump'
+Sent to robotJump | Move the robot according to the alongpath component

@@ -1,0 +1,23 @@
+{
+  "cells": [
+    [10,10,1,10,10,0,0,0],
+    [10,10,1,10,10,0,0,0],
+    [1,1,1,1,1,0,0,0],
+    [10,10,1,10,10,0,0,0],
+    [10,10,1,10,10,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0]
+  ],
+  "code": [
+    [],[],[]
+  ],
+  "instructions": ["forward","right","left","jump","light","p1","p2"],
+  "level": 13,
+  "startRow": 0,
+  "startCol": 3,
+  "startDirection": "north",
+  "startHeight": 2,
+  "helpText": null,
+  "levelText": "Procedures-6"
+}

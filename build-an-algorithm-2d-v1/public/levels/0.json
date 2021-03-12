@@ -1,0 +1,36 @@
+{
+  "start":    {"row": 3, "col": 4},
+  "finish":   {"row": 0, "col": 4},
+  "controlsEnabled": ["left","right","forward","light"],
+  "procedureCount": 0,
+  "cells": [
+    [0,0,0,0,33,0,0,0],
+    [0,0,0,0,1,0,0,0],
+    [0,0,0,0,1,0,0,0],
+    [0,0,0,0,81,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0]
+  ],
+  "codes": [
+    [
+      {
+        "inst": "forward",
+        "active": false
+      },
+      {
+        "inst": "forward",
+        "active": false
+      },
+      {
+        "inst": "forward",
+        "active": false
+      }
+    ]
+  ],
+  "help": [
+    "Use the function blocks to move the arrow from start to the finish.  Level 1 is done for you; three forward moves will get you to the finish.",
+    "Click the <span class=\"button-like\">Run!</span> button to test your program"
+  ]
+}
