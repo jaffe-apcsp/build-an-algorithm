@@ -82,7 +82,7 @@ function App() {
         state.userHash === '' ?
           <Login dispatch={dispatch} /> :
           <Row className="player">
-            <audio loop src="music.wav" autoPlay></audio>
+            {/*<audio loop src="music.wav" autoPlay></audio>*/}
             <Col lg={6} className="canvas">
               <Header {...state} dispatch={dispatch} />
               <Canvas {...state} dispatch={dispatch} />
