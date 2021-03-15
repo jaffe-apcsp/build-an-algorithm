@@ -1,0 +1,23 @@
+{
+  "cells": [
+    [0,10,0,0,0,0,0,0],
+    [0,1,0,0,0,0,0,0],
+    [0,1,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0]
+  ],
+  "code": [
+    ["forward","forward","light","right","left","jump","p1","p2"],
+    ["p1","p2"],
+    ["jump"]
+  ],
+  "blocks": ["forward","right","left","light"],
+  "level": 0,
+  "startRow": 2,
+  "startCol": 1,
+  "startDirection": "north",
+  "startHeight": 1
+}
