@@ -26,12 +26,13 @@ const updateCallstack = store => () => {
       store.dispatch(opsStop());
     } else {
       let call = Stack.peek(callStack);
+      // debugger;
       call.index++;
       if (call.index === state[call.name].blocks.length) {
         if (call.iterationsLeft && call.iterationsLeft > 0) {
           console.log('iterations ' + call.iterationsLeft);
           call.iterationsLeft--;
-          call.index = 0;
+          call.index = -1;
           callStack = Stack.swapTop(callStack, call);
         } else {
           console.log('function complete');

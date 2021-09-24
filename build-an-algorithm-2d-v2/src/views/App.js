@@ -9,6 +9,7 @@ import CodeWindow from "./CodeWindow";
 import BlockPalette from './BlockPalette';
 import RunButton from "./RunButton";
 import Help from "./Help";
+import { version } from '../../package.json';
 
 const mapStateToProps = state => ({
   level: state.level,
@@ -75,6 +76,7 @@ const App = props => {
         <div className="centered">
           <button onClick={goBackToLevel1}>Go back to Level 1</button>
         </div>
+        <div className="version">Version: {version}</div>
       </div>
     )
   } else {

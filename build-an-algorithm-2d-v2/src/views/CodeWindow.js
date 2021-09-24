@@ -46,6 +46,11 @@ const CodeWindow = props => {
   }
 
   useEffect(() => {
+    let savedData = localStorage.getItem(props.name);
+    console.log(savedData);
+  }, [props.name])
+
+  useEffect(() => {
     let blocks = R.clone(props.blocks);
     setBlocks(blockDragDrop(props.name, blocks, props.draggable));
   }, [props.name, props.blocks, props.draggable])

@@ -1,6 +1,6 @@
 {
   "name": "build-an-algorithm-2d-v2",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "homepage": ".",
   "private": true,
   "dependencies": {
@@ -14,7 +14,7 @@
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
     "react-redux": "^7.2.2",
-    "react-scripts": "4.0.0",
+    "react-scripts": "^4.0.0",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6"

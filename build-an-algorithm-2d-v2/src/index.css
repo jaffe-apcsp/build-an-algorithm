@@ -89,3 +89,5 @@ body {background-image: url("images/star-field1.jpg") }
 .help {padding: 0 15%; color: white; text-align: center; color: black;}
 .help-container {background-color: rgb(201,218,246); padding: 5px 15px; border-radius: 15px;}
 .help .help-container h2 {margin: 10px;}
+
+.version {color: white; font-style: italic; font-size: 0.75rem; margin-left: 15px; margin-bottom: 15px;}
