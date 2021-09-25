@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import ac from '../reducer/actionCreators';
-import { GAME_COMPLETE, LOCAL_STORAGE_KEY, MAX_LEVEL } from "../utilities/constants";
+import { GAME_COMPLETE, LOCAL_STORAGE_KEY, LOCAL_STORAGE_BLOCK_KEY, MAX_LEVEL } from "../utilities/constants";
 import Header from './Header';
 import Board from "./Board";
 import GameComplete from "./GameComplete";
@@ -19,12 +19,20 @@ const mapStateToProps = state => ({
 
 const App = props => {
 
-  const { loadLevelAndTrial } = props;
+  const { loadLevelAndTrial, loadSavedBlocks } = props;
+
   useEffect(() => {
     let savedLevelAndTrial = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     savedLevelAndTrial = savedLevelAndTrial ? (savedLevelAndTrial.level < MAX_LEVEL ? savedLevelAndTrial : {level: 0, trial: 0}) : {level: 0, trial: 0}
     loadLevelAndTrial(savedLevelAndTrial);
   }, [loadLevelAndTrial])
+
+  useEffect(() => {
+    let savedBlocks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_BLOCK_KEY));
+    if (savedBlocks) {
+      loadSavedBlocks(savedBlocks);
+    }
+  }, [loadSavedBlocks])
 
   const goBackToLevel1 = evt => {
     loadLevelAndTrial({level: 0, trial: 0});
@@ -84,7 +92,10 @@ const App = props => {
   }
 }
 
-const actionCreators = { loadLevelAndTrial: ac.loadLevelAndTrial };
+const actionCreators = {
+  loadLevelAndTrial: ac.loadLevelAndTrial,
+  loadSavedBlocks: ac.loadSavedBlocks
+};
 
 export default connect(
   mapStateToProps,

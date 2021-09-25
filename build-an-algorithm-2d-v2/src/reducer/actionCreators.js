@@ -2,6 +2,8 @@ import {createAction} from "@reduxjs/toolkit";
 
 const actions = {
   loadLevelAndTrial: createAction('LOAD_LEVEL_AND_TRIAL'),
+  loadSavedBlocks: createAction('LOAD_SAVED_BLOCKS'),
+  setBlocks: createAction('SET_BLOCKS'),
   setLevelData: createAction('SET_LEVEL_DATA'),
   setFetchError: createAction('FETCH_ERROR'),
   setSelectedCodeWindow: createAction('SET_SELECTED_CODE_WINDOW'),

@@ -3,6 +3,7 @@ import ac from './actionCreators';
 import blockDragDrop from "../utilities/blockDragDrop";
 import { moveForward, getNewDirection } from "../utilities/movements";
 import {MAX_ROWS, MAX_COLS, STANDBY, PROC_SET, RUNNING, ERROR, GAME_INCOMPLETE, GAME_COMPLETE, COMPLETE, CODE_WINDOW_BLOCKS, DIRTY} from "../utilities/constants";
+import {LOCAL_STORAGE_BLOCK_KEY} from "../utilities/constants";
 const R = require('ramda');
 
 const initialState = {
@@ -105,7 +106,11 @@ const reducer = createReducer (
         state.trial = action.payload.trial;
       })
       .addCase(ac.setLevelData, (state, action) => {
-        state.levelData = {...action.payload};
+        const levelData = {...action.payload};
+        if (state.main.blocks.length > 0) {
+          delete(levelData.main);
+        }
+        state.levelData = levelData;
         let colorCount = action.payload.board.reduce((colorCount, row) => {
           return row.reduce((colorCount, cell) => {
             colorCount.blue += cell === 'b' ? 1 : 0;
@@ -122,6 +127,16 @@ const reducer = createReducer (
           }
           state[proc].enabled = R.includes(proc, state.levelData.blocksAvailable)
         })
+      })
+      .addCase(ac.setBlocks, (state, action) => {
+        const {main, p1, p2, l1, l2} = action.payload;
+        state.main.blocks = main?.blocks ?? state.main.blocks;
+        state.l1.blocks = l1?.blocks ?? state.l1.blocks;
+        state.l1.iterations = l1?.iterations ?? state.l1.iterations;
+        state.l2.blocks = l2?.blocks ?? state.l2.blocks;
+        state.l2.iterations = l2?.iterations ?? state.l2.iterations;
+        state.p1.blocks = p1?.blocks ?? state.p1.blocks;
+        state.p2.blocks = p2?.blocks ?? state.p2.blocks;
       })
       .addCase(ac.setFetchError, (state, action) => {
         state.error = true;
@@ -246,6 +261,9 @@ const reducer = createReducer (
         state.errorReason = '';
         // state.trial++;
         state.gameState = STANDBY;
+        if (state.level === 0) {
+          localStorage.removeItem(LOCAL_STORAGE_BLOCK_KEY);
+        }
       })
       .addCase(ac.opsNewTrial, (state, action) => {
         state.trial++;

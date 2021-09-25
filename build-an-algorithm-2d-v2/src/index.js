@@ -10,6 +10,7 @@ import opsController from "./middleware/opsController";
 import reducer from "./reducer/reducer";
 import logger from 'redux-logger';
 import * as serviceWorker from './serviceWorker';
+import saveBlocks from "./middleware/saveBlocks";
 
 const store = configureStore({
   reducer,
@@ -18,6 +19,7 @@ const store = configureStore({
       .concat(logger)
       .concat(saveLevelTrial)
       .concat(loadNewLevelData)
+      .concat(saveBlocks)
       .concat(opsController),
   devTools: process.env.NODE_ENV !== 'production'
 })

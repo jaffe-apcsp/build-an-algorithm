@@ -1,4 +1,5 @@
 export const LOCAL_STORAGE_KEY = 'baa2d';
+export const LOCAL_STORAGE_BLOCK_KEY = 'blocks';
 export const MAX_ROWS = 8;
 export const MAX_COLS = 8;
 export const CODE_WINDOW_BLOCKS = 12;
