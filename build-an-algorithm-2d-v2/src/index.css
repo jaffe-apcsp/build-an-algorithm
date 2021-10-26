@@ -91,3 +91,7 @@ body {background-image: url("images/star-field1.jpg") }
 .help .help-container h2 {margin: 10px;}
 
 .version {color: white; font-style: italic; font-size: 0.75rem; margin-left: 15px; margin-bottom: 15px;}
+
+.login-container {text-align: center; color: white; font-size: 2rem;}
+.login-container button {height: 50px; font-size: 2rem; margin-top: 15px; border-radius: 5px; background-color: dodgerblue; color: white;}
+.login-container input {font-size: 2rem;}

@@ -10,6 +10,7 @@ const actions = {
   codeBlockClicked: createAction('CODE_BLOCK_CLICKED'),
   setGameState: createAction('SET_GAME_STATE'),
   clearProcedures: createAction('CLEAR_PROCEDURES'),
+  login: createAction('LOGIN'),
 
   opsStart: createAction('OPS/START'),
   opsStop: createAction('OPS/STOP'),

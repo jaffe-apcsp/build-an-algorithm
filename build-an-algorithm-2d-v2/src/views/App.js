@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import ac from '../reducer/actionCreators';
 import { GAME_COMPLETE, LOCAL_STORAGE_KEY, LOCAL_STORAGE_BLOCK_KEY, MAX_LEVEL } from "../utilities/constants";
@@ -8,37 +8,49 @@ import GameComplete from "./GameComplete";
 import CodeWindow from "./CodeWindow";
 import BlockPalette from './BlockPalette';
 import RunButton from "./RunButton";
+import Login from './Login';
 import Help from "./Help";
 import { version } from '../../package.json';
 
 const mapStateToProps = state => ({
   level: state.level,
   value: state.value,
-  gameState: state.gameState
+  gameState: state.gameState,
+  lsKey: state.lsKey
 });
 
 const App = props => {
 
-  const { loadLevelAndTrial, loadSavedBlocks } = props;
+  const { loadLevelAndTrial, loadSavedBlocks, login } = props;
+  const [loginState, setLoginState] = useState(true);
 
   useEffect(() => {
-    let savedLevelAndTrial = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    let savedLevelAndTrial = JSON.parse(localStorage.getItem(props.lsKey));
     savedLevelAndTrial = savedLevelAndTrial ? (savedLevelAndTrial.level < MAX_LEVEL ? savedLevelAndTrial : {level: 0, trial: 0}) : {level: 0, trial: 0}
     loadLevelAndTrial(savedLevelAndTrial);
-  }, [loadLevelAndTrial])
+  }, [loadLevelAndTrial, props.lsKey])
 
   useEffect(() => {
     let savedBlocks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_BLOCK_KEY));
     if (savedBlocks) {
       loadSavedBlocks(savedBlocks);
     }
-  }, [loadSavedBlocks])
+  }, [loadSavedBlocks, props.lsKey])
 
   const goBackToLevel1 = evt => {
     loadLevelAndTrial({level: 0, trial: 0});
   }
 
-  if (props.gameState === GAME_COMPLETE) {
+  const loginClick = lsKey => {
+    login(lsKey);
+    setLoginState(false);
+  }
+
+  if (loginState) {
+    return <div className="app">
+      <Login loginClick={loginClick} />
+    </div>
+  } else if (props.gameState === GAME_COMPLETE) {
     return (
       <div className="app">
         <GameComplete />
@@ -94,7 +106,8 @@ const App = props => {
 
 const actionCreators = {
   loadLevelAndTrial: ac.loadLevelAndTrial,
-  loadSavedBlocks: ac.loadSavedBlocks
+  loadSavedBlocks: ac.loadSavedBlocks,
+  login: ac.login
 };
 
 export default connect(

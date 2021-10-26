@@ -2,8 +2,21 @@ import { createReducer } from "@reduxjs/toolkit";
 import ac from './actionCreators';
 import blockDragDrop from "../utilities/blockDragDrop";
 import { moveForward, getNewDirection } from "../utilities/movements";
-import {MAX_ROWS, MAX_COLS, STANDBY, PROC_SET, RUNNING, ERROR, GAME_INCOMPLETE, GAME_COMPLETE, COMPLETE, CODE_WINDOW_BLOCKS, DIRTY} from "../utilities/constants";
-import {LOCAL_STORAGE_BLOCK_KEY} from "../utilities/constants";
+import {
+  MAX_ROWS,
+  MAX_COLS,
+  STANDBY,
+  PROC_SET,
+  RUNNING,
+  ERROR,
+  GAME_INCOMPLETE,
+  GAME_COMPLETE,
+  COMPLETE,
+  CODE_WINDOW_BLOCKS,
+  DIRTY,
+  LOCAL_STORAGE_KEY,
+  LOCAL_STORAGE_BLOCK_KEY
+} from "../utilities/constants";
 const R = require('ramda');
 
 const initialState = {
@@ -15,6 +28,7 @@ const initialState = {
   gameState: STANDBY,
   error: false,
   errorReason: '',
+  lsKey: null,
 
   // Function call stack
   callStack: [],
@@ -276,6 +290,18 @@ const reducer = createReducer (
       })
       .addCase(ac.opsIncomplete, (state, action) => {
         state.gameState = GAME_INCOMPLETE;
+      })
+      .addCase(ac.login, (state, action) => {
+        state.lsKey = action.payload;
+        const savedStateJSON = localStorage.getItem(state.lsKey);
+        if (savedStateJSON) {
+          const savedState = JSON.parse(savedStateJSON);
+          state.level = savedState.level;
+          state.trial = savedState.trial;
+        } else {
+          state.level = 0;
+          state.trial = 0;
+        }
       })
   }
 )
