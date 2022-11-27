@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import ac from "../reducer/actionCreators";
+import {LOCAL_STORAGE_KEY} from "../utilities/constants";
 
 const mapStateToProps = (state, ownProps) => ({
   lsKey: state.lsKey
@@ -17,6 +18,17 @@ const Login = props => {
   }
 
   const onClick = evt => {
+    // Set the level / trial if provided in the URL parameters
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    try {
+      const level = parseInt(urlParams.get('level'),0)-1;
+      if (level) {
+        localStorage.setItem(lsKey, JSON.stringify({level, trial: 0, lsKey}));
+      }
+    } catch(e) {}
+
+    // Now login
     props.loginClick(lsKey);
   }
 

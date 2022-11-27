@@ -14,7 +14,6 @@ import {
   COMPLETE,
   CODE_WINDOW_BLOCKS,
   DIRTY,
-  LOCAL_STORAGE_KEY,
   LOCAL_STORAGE_BLOCK_KEY
 } from "../utilities/constants";
 const R = require('ramda');

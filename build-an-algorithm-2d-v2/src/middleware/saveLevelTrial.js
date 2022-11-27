@@ -1,5 +1,5 @@
 import ac  from '../reducer/actionCreators';
-import {LOCAL_STORAGE_KEY, MAX_LEVEL} from "../utilities/constants";
+import {MAX_LEVEL} from "../utilities/constants";
 
 const saveToLocalStorage = obj => {
   localStorage.setItem(obj.lsKey, JSON.stringify(obj));

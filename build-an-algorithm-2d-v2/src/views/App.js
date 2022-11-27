@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import ac from '../reducer/actionCreators';
-import { GAME_COMPLETE, LOCAL_STORAGE_KEY, LOCAL_STORAGE_BLOCK_KEY, MAX_LEVEL } from "../utilities/constants";
+import { GAME_COMPLETE, LOCAL_STORAGE_BLOCK_KEY, MAX_LEVEL } from "../utilities/constants";
 import Header from './Header';
 import Board from "./Board";
 import GameComplete from "./GameComplete";
